@@ -12,6 +12,8 @@ resource dnatRCG 'Microsoft.Network/firewallPolicies/ruleCollectionGroups@2023-1
   properties: {
     priority: 300
     ruleCollections: [
+            
+              // 3. Allow traffic to webvm from internet using firewall public ip.
       {
         name: 'AllowSSH'
         priority: 100
