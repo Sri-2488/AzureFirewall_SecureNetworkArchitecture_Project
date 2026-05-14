@@ -50,18 +50,18 @@
  - Kusto Query Language (KQL)
 
 ## Validation & Testing
-### Test Web VM Connection.
+### Web VM Connection Test.
 <img width="509" height="448" alt="image" src="https://github.com/user-attachments/assets/9346b919-8efd-42d7-b398-5d5c1da2fc3f" />
 
 
 <img width="680" height="511" alt="image" src="https://github.com/user-attachments/assets/e3da8ddd-9d06-44d1-8dbd-5c2acfb6e99c" />
 
-### Test Internet Access
+### Internet Access Test
 - Allow: Microsoft.com
 - Deny: Google.com
 <img width="689" height="524" alt="image" src="https://github.com/user-attachments/assets/75705a04-bd6c-4095-83a6-2969f2e778c6" />
 
-### Test DB Connectivity
+### DB Connectivity Test
 <img width="649" height="49" alt="6" src="https://github.com/user-attachments/assets/d27df6b6-28e1-47c5-9444-414a58e3b191" />
 
 ### Firewall Policy Rule Collection Group List
@@ -72,22 +72,50 @@
 
 ## Logging & Monitoring
 Azure Firewall diagnostics are enabled and sent to Log Analytics.
+Created Log Workspace in AzFirewall VNet
+
 <img width="830" height="438" alt="4" src="https://github.com/user-attachments/assets/722ab2bc-a3ba-4066-8f5b-df179e31081f" />
+
+Firewall Logs:
 <img width="966" height="468" alt="8" src="https://github.com/user-attachments/assets/d7844a0c-c761-4e8b-bff8-abe902e7c23a" />
+
 <img width="690" height="360" alt="9" src="https://github.com/user-attachments/assets/3f86e081-6119-41c6-bbee-e60311efd708" />
+
 <img width="710" height="392" alt="10" src="https://github.com/user-attachments/assets/c4533023-5386-4e66-b097-f4b14a1fb068" />
+
 <img width="922" height="454" alt="12-ntrule" src="https://github.com/user-attachments/assets/36c613d2-5a27-4f3e-9d36-301d3d9e3403" />
+
 <img width="830" height="481" alt="13-netrule" src="https://github.com/user-attachments/assets/c9005352-4174-4dce-8a29-2ed5bbeb69bd" />
+
 <img width="731" height="409" alt="15-netrule" src="https://github.com/user-attachments/assets/d8c5618d-b267-4df8-9bec-1d42cfb865c9" />
+
 <img width="937" height="470" alt="16" src="https://github.com/user-attachments/assets/14c74595-c18d-488e-887b-01a482b30790" />
+
 <img width="927" height="481" alt="17" src="https://github.com/user-attachments/assets/ae674f97-9e76-4892-9801-b8a0010fd5a1" />
+
 <img width="936" height="500" alt="18" src="https://github.com/user-attachments/assets/a310bf2b-fd62-421a-b694-5a991d10d7a5" />
+
 <img width="914" height="469" alt="19" src="https://github.com/user-attachments/assets/245e94e0-81f1-45da-8255-b63926ba6a78" />
 
+## Challenges & Solutions
 
+### Issue: No Connectivity to DB
+- Cause: MySQL not listening externally
+- Fix: Updated bind-address to 0.0.0.0
+### Issue: Traffic timeout from webvm to dbvm
+- Cause: Missing return route
+- Fix: Added UDR in Data subnet
+### Issue: Logs not appeared from Firewall
+- Cause: Diagnostic misconfiguration
+- Fix: Enabled correct categories in Log Analytics.
 
+## Key Learnings
+- Importance of forced routing via firewall
+- Difference between DNAT, Network and Application rules
+- Real-world troubleshooting of Azure networking
+- monitoring using KQL queries.
 
-
-
-
-
+## Future Enhancements
+- Terraform implementation
+- Azure Application Gateway integration and Azure WAF
+- Microsoft Sentinel for advanced monitoring
