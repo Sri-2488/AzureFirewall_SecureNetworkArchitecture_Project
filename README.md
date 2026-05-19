@@ -1,6 +1,6 @@
 # Azure Firewall Secure Network Architecture 
 ## Project Overview
- This Project demonstrates the design and implementation of a secure multi-tier network architecture in Microsoft Azure using Azure Firewall, its policies and rules for centralized traffic inspection, routing and monitoring. The architecture enforces strict communication between application and database layers while ensuring all traffic flows through a centralized security control point.
+ This Project demonstrates the design and implementation of a secure multi-tier network architecture in Microsoft Azure using Azure Firewall, its policies and rules for centralized traffic inspection, routing and monitoring. The architecture enforces strict communication between application and database layers while ensuring all traffic flows through a centralized security control point using Azure CLI.
  
  ## Architecture
  ### Key Components:
