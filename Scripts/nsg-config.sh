@@ -1,4 +1,4 @@
-#Created NSG rule in App resource-group to allow port 22 because by deafult all the ports are blocked to the internet.
+#Created NSG rule in App resource-group to allow port 22 because by deafult all the ports are blocked to the internet using Azure CLI.
 az network nsg create -g Rg-App --name web-nsg --location australiaeast
 az network nsg rule create '
  -g Rg-App '
