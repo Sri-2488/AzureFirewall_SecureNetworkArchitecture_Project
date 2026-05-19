@@ -1,4 +1,4 @@
-#Purpose: Configuring both Webvm and DBvm.
+#Purpose: Configuring both Webvm and DBvm using Azure CLI (Powershell).
 
 #Created webvm NIC :
       az network nic create '
